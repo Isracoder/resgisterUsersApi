@@ -26,53 +26,6 @@ app.post("/register", async (req, res) => {
   }
 });
 
-/*
-router.post('/', async(req: Task.Request, res: Task.Response) => {
-  const newTask = new Todo();
-  newTask.title = req.body.title;
-  newTask.description = req.body.description;
-  newTask.user = req.body.userId;
-  const tags = await Tag.find({
-    where : {
-      id: In(req.body.tags)
-    }
-  }) ;
-  newTask.tags = tags ;
-
-  newTask.save().then((response:any) => {
-
-    res.status(201).send('Task Created with ID:' + response.id);
-  }).catch((error:any) => {
-    console.error(error);
-    res.status(500).send('Something went wrong');
-  });
-});
-
-
-try {
-    const user = new User();
-    const profile = new Profile();
-    user.userName = req.body.userName;
-    // await profile.save();
-    user.profile = profile;
-    // await user.save();
-    db.dataSource
-      .transaction(async (transactionManager) => {
-        await transactionManager.save(user);
-        await transactionManager.save(profile);
-      })
-      .then(() => {
-        // res.send()
-        res.send("User created and Profile created");
-      })
-      .catch((e) => {
-        res.status(500).send(`Something went wrong ${e}`);
-      });
-  } catch (error) {
-    console.log(error);
-    res.status(500).send("Something went wrong with creating a new user");
-  }
-*/
 
 app.get("/", (req, res) => {
   res.send("Server UP!");
